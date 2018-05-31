@@ -11,7 +11,9 @@
 	<br />
 	<a href="squaredNumbers.jsp">Exercise 2c, d - Squared Numbers</a>
 	<br />
-	<a href="randomNumberTable.jsp">Exercise 3 - Generating a Random Number Table</a>
+	<a href="randomNumberTable.jsp">Exercise 3a - Generating a Random Number Table</a>
+	<br />
+	<a href="randomTable">Exercise 3b - Generating a Random Number Table - Servlet</a>
 	<br />
 </body>
 </html>
