@@ -1,4 +1,4 @@
-package com.fvv.std.servlets;
+package com.fvv.std.web.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -67,7 +67,7 @@ public class AuthServlet extends HttpServlet {
 			out.println("Name/Password Does Not Match");
 		}		
 		
-		out.println("<br/><a href=\"index.jsp\">Home</a>");
+		out.println("<br/><a href=\"../index.jsp\">Home</a>");
 		out.println("</body>");
 		out.println("</html>");
 	}

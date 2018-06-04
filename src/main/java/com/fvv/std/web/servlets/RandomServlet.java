@@ -1,4 +1,4 @@
-package com.fvv.std.servlets;
+package com.fvv.std.web.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,21 +16,9 @@ public class RandomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-	}
-
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("HTTP GET Invoked...");
-		this.generateRandomTable(request, response);
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("HTTP POST Invoked...");
 		this.generateRandomTable(request, response);
 	}
 
@@ -121,8 +108,14 @@ public class RandomServlet extends HttpServlet {
 
 		out.print("</table>");
 
-		out.println("<br/><a href=\"index.jsp\">Home</a>");
+		out.println("<br/><a href=\"../index.jsp\">Home</a>");
 		out.println("</body>");
 		out.println("</html>");
 	}
+
+
+
 }
+
+
+

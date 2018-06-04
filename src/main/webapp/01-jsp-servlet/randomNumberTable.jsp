@@ -76,6 +76,7 @@
 		</tr>
 		<%
 			}
+			//calcular media 1x
 		%>
 		<tr>
 			<th colspan="5" style="color:DarkBlue;">Vertical Sum</th>

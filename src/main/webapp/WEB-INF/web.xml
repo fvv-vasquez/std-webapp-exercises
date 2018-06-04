@@ -8,20 +8,29 @@
 
 	<servlet>
 		<servlet-name>authServlet</servlet-name>
-		<servlet-class>com.fvv.std.servlets.AuthServlet</servlet-class>
+		<servlet-class>com.fvv.std.web.servlets.AuthServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>authServlet</servlet-name>
-		<url-pattern>/authentication</url-pattern>
+		<url-pattern>/01-jsp-servlet/authentication</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
 		<servlet-name>randServlet</servlet-name>
-		<servlet-class>com.fvv.std.servlets.RandomServlet</servlet-class>
+		<servlet-class>com.fvv.std.web.servlets.RandomServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>randServlet</servlet-name>
-		<url-pattern>/randomTable</url-pattern>
+		<url-pattern>/01-jsp-servlet/randomTable</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addBookServlet</servlet-name>
+		<servlet-class>com.fvv.std.web.servlets.AddBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addBookServlet</servlet-name>
+		<url-pattern>/02-taglib/addBook</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
