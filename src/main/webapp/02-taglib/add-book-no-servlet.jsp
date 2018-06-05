@@ -1,4 +1,7 @@
 <html>
+<head>
+<title>Adding a Book</title>
+</head>
 <body>
 	<p><h3>Adding a book w/o servlet</h3></p>
 
@@ -8,5 +11,7 @@
 		<p>Publication Date: <input type="text" name="publicationDate" /></p> 
 		<input type="submit" value="Record" />
 	</form>
+	<br />
+	<a href="../index.jsp">Home</a>
 </body>
 </html>

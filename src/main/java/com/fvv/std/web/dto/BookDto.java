@@ -1,4 +1,4 @@
-package com.fvv.std.bean.dto;
+package com.fvv.std.web.dto;
 
 
 /**
@@ -63,7 +63,4 @@ public class BookDto {
 	public void setPublicationDate(String publicationDate) {
 		this.publicationDate = publicationDate;
 	}
-	
-	
-
 }

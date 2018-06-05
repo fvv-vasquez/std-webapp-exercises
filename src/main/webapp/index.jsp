@@ -20,7 +20,8 @@
 			<ul>
 				<li><a href="02-taglib/add-book.jsp">Adding a Book</a></li>
 				<li><a href="02-taglib/add-book-no-servlet.jsp">Adding a Book No Servlet</a></li>
-				<li><a href="01-jsp-servlet/usingForLoop.jsp">Exercise 2a - Using For Loop</a></li>
+				<li><a href="02-taglib/list-books-jstl.jsp">Listing all Books using JSTL</a></li>
+				<li><a href="02-taglib/list-books.jsp">Listing all Books</a></li>
 			</ul>
 		</li>
 	</ul>

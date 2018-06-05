@@ -25,7 +25,7 @@ public class BookView {
 		}
 	}
 	
-	public List<Book> listBooks() throws ControllerException {
+	public List<Book> getBooks() throws ControllerException {
 		return this.bookController.listBooks();
 	}
 

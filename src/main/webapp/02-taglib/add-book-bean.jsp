@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <jsp:useBean id="bookView" class="com.fvv.std.web.view.BookView"/>
-<jsp:useBean id="bookDto" class="com.fvv.std.bean.dto.BookDto"/>
+<jsp:useBean id="bookDto" class="com.fvv.std.web.dto.BookDto"/>
 <jsp:setProperty property="*" name="bookDto"/>
 
 <%
