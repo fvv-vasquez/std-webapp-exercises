@@ -22,6 +22,7 @@
 				<li><a href="02-taglib/add-book-no-servlet.jsp">Adding a Book No Servlet</a></li>
 				<li><a href="02-taglib/list-books-jstl.jsp">Listing all Books using JSTL</a></li>
 				<li><a href="02-taglib/list-books.jsp">Listing all Books</a></li>
+				<li><a href="02-taglib/random-table-taglib.jsp">Random Number Table with Taglib</a></li>
 			</ul>
 		</li>
 	</ul>
