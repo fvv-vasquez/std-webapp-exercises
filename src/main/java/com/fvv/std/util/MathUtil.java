@@ -20,7 +20,7 @@ public final class MathUtil {
 	 * @param places of Integer type.
 	 * @return a double.
 	 */
-	public static Double round(final Double value) {
+	public Double round(final Double value) {
 		BigDecimal bd = new BigDecimal(Double.toString(value));
 		bd = bd.setScale(2, RoundingMode.HALF_UP);
 		return bd.doubleValue();
