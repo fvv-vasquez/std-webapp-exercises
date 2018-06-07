@@ -8,6 +8,10 @@
 <title>Listing All Books using JSTL</title>
 </head>
 <body>
+	<c:import url="header.jsp" />
+	<br/>
+	<br/>
+	
 	<table border="1">
 		<tr>
 			<td><b>#</b></td>

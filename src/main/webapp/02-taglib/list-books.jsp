@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="../css/site.css" type="text/css">
 </head>
 <body>
+	<c:import url="header.jsp" />
+	<br/>
+	<br/>
+	
 	<display:table name="${bookView.books}"
 		decorator="com.fvv.std.web.displaytag.wrapper.BookWrapper">
 		<display:column property="id" title="ID" />
