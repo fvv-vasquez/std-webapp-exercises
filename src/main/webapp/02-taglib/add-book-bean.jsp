@@ -34,3 +34,6 @@
 	request.setAttribute("returnPage", "../02-taglib/add-book-no-servlet.jsp");
 	rd.forward(request, response);
 %>
+
+<br />
+<c:import url="footer.jsp" />

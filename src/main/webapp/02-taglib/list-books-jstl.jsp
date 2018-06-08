@@ -9,9 +9,9 @@
 </head>
 <body>
 	<c:import url="header.jsp" />
-	<br/>
-	<br/>
-	
+	<br />
+	<br />
+
 	<table border="1">
 		<tr>
 			<td><b>#</b></td>
@@ -32,5 +32,7 @@
 	</table>
 	<br />
 	<a href="../index.jsp">Home</a>
+	<br />
+	<c:import url="footer.jsp" />
 </body>
 </html>

@@ -12,9 +12,9 @@
 </head>
 <body>
 	<c:import url="header.jsp" />
-	<br/>
-	<br/>
-	
+	<br />
+	<br />
+
 	<display:table name="${bookView.books}"
 		decorator="com.fvv.std.web.displaytag.wrapper.BookWrapper">
 		<display:column property="id" title="ID" />
@@ -24,5 +24,7 @@
 	</display:table>
 	<br />
 	<a href="../index.jsp">Home</a>
+	<br />
+	<c:import url="footer.jsp" />
 </body>
 </html>

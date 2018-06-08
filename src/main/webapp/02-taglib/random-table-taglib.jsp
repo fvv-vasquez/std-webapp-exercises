@@ -125,5 +125,7 @@
 	</table>
 	<br />
 	<a href="../index.jsp">Home</a>
+	<br />
+	<c:import url="footer.jsp" />
 </body>
 </html>
