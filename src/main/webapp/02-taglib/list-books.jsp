@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../css/site.css" type="text/css">
 </head>
 <body>
+	<c:import url="menu.jsp" />
 	<c:import url="header.jsp" />
 	<br />
 	<br />

@@ -7,6 +7,7 @@
 <title>Random Table using Taglib</title>
 </head>
 <body>
+	<c:import url="menu.jsp" />
 	<c:import url="header.jsp" />
 	<br />
 	<br />

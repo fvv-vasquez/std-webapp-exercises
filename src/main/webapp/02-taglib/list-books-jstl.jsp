@@ -8,6 +8,7 @@
 <title>Listing All Books using JSTL</title>
 </head>
 <body>
+	<c:import url="menu.jsp" />
 	<c:import url="header.jsp" />
 	<br />
 	<br />
