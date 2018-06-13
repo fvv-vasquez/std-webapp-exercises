@@ -42,6 +42,8 @@ public class ConnectionFactory {
     public static ConnectionFactory getInstance() throws SQLException {
     	if (instance == null) {
     		instance = new ConnectionFactory();
+    	} else if (instance.getConnection().isClosed()) {
+            instance = new ConnectionFactory();
     	}
     	return instance;
     }
