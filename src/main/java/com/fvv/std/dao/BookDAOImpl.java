@@ -28,7 +28,7 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public void addBook(final Book book) throws DaoException {
 		try (
-				Connection conn = ConnectionFactory.getConnection(); 
+				Connection conn = ConnectionFactory.getInstance().getConnection(); 
 				PreparedStatement ps = conn.prepareStatement(SqlQueryEnum.BOOK_INSERT.getQuery())
 		) {					
 			ps.setString(1, book.getTitle());
@@ -47,7 +47,7 @@ public class BookDAOImpl implements BookDAO {
 	public List<Book> listBooks() throws DaoException {
 		List<Book> books = new ArrayList<>();
 		try (
-				Connection conn = ConnectionFactory.getConnection(); 
+				Connection conn = ConnectionFactory.getInstance().getConnection(); 
 				PreparedStatement ps = conn.prepareStatement(SqlQueryEnum.BOOK_SELECT_ALL.getQuery());
 				ResultSet rs = ps.executeQuery()
 		) {				

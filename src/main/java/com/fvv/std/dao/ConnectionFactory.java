@@ -18,18 +18,31 @@ public class ConnectionFactory {
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/webexercises_db";
 	private static final String DB_USER = "root";
 	private static final String DB_PASS = "test1234";
+	private static ConnectionFactory instance;
+	private Connection connection;
 
 	/**
 	 * It opens a connection with the database.
 	 * @return a connection object.
 	 * @throws SQLException when a problem in database happens.
 	 */
-    public static Connection getConnection() throws SQLException {
+    private ConnectionFactory() throws SQLException {
     	try {
     		Class.forName(DB_DRIVER);
-    		return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+    		this.connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
     	} catch (ClassNotFoundException e) {
     		throw new SQLException(e.getMessage());
     	}
+    }
+    
+    public Connection getConnection() {
+        return connection;
+    }
+    
+    public static ConnectionFactory getInstance() throws SQLException {
+    	if (instance == null) {
+    		instance = new ConnectionFactory();
+    	}
+    	return instance;
     }
 }
