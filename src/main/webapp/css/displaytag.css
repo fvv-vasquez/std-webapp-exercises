@@ -1,4 +1,10 @@
-table {
+/*table {
+	border: 1px solid #666;
+	width: 80%;
+	margin: 20px 0 20px 0 !important;
+}*/
+
+.table-dt {
 	border: 1px solid #666;
 	width: 80%;
 	margin: 20px 0 20px 0 !important;

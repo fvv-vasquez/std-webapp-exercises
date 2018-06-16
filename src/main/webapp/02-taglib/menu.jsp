@@ -44,6 +44,7 @@ body {
 
 <div class="sidenav">
 	<a><b>.: Menu :.</b></a><br>
+	<a href="../index.jsp">Home</a>
 	<a href="add-book.jsp">Adding a Book</a> 
 	<a href="add-book-no-servlet.jsp">Adding a Book No Servlet</a>
 	<a href="list-books-jstl.jsp">Listing all Books using JSTL</a> 

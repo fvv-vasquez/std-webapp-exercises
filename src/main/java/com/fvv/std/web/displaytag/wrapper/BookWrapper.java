@@ -1,13 +1,12 @@
 package com.fvv.std.web.displaytag.wrapper;
 
 import java.text.DecimalFormat;
-import java.time.ZoneId;
-import java.util.Date;
 
 import org.apache.commons.lang.time.FastDateFormat;
 import org.displaytag.decorator.TableDecorator;
 
 import com.fvv.std.bean.Book;
+import com.fvv.std.util.DateUtil;
 
 public class BookWrapper extends TableDecorator {
 
@@ -43,11 +42,7 @@ public class BookWrapper extends TableDecorator {
      * @return formatted date
      */
     public String getPublicationDate() {
-    	return this.dateFormat.format(this.convertLocalDateToDate());
-    }
-    
-    private Date convertLocalDateToDate() {
-    	return Date.from(((Book) this.getCurrentRowObject()).getPublicationDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+    	return this.dateFormat.format(DateUtil.convertLocalDateToDate(((Book) this.getCurrentRowObject()).getPublicationDate()));
     }
     
     /**

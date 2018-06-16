@@ -26,12 +26,12 @@ public class ConnectionFactory {
 	 * @return a connection object.
 	 * @throws SQLException when a problem in database happens.
 	 */
-    private ConnectionFactory() throws SQLException {
+    private ConnectionFactory() {
     	try {
     		Class.forName(DB_DRIVER);
     		this.connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-    	} catch (ClassNotFoundException e) {
-    		throw new SQLException(e.getMessage());
+    	} catch (ClassNotFoundException | SQLException e) {
+    		throw new RuntimeException("Fatal Error: Connection with " + DB_URL + " db could not be stablished.\nReason: " + e.getMessage());
     	}
     }
     
@@ -39,12 +39,16 @@ public class ConnectionFactory {
         return connection;
     }
     
-    public static ConnectionFactory getInstance() throws SQLException {
-    	if (instance == null) {
-    		instance = new ConnectionFactory();
-    	} else if (instance.getConnection().isClosed()) {
-            instance = new ConnectionFactory();
-    	}
-    	return instance;
+    public static ConnectionFactory getInstance() {
+    	try {
+	    	if (instance == null) {
+	    		instance = new ConnectionFactory();
+	    	} else if (instance.getConnection().isClosed()) {
+			    instance = new ConnectionFactory();
+			}				
+	    	return instance;
+    	} catch (SQLException e) {
+    		throw new RuntimeException("Fatal Error: Connection with " + DB_URL + " db could not be stablished.\nReason: " + e.getMessage());
+		}
     }
 }

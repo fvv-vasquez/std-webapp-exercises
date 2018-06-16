@@ -17,14 +17,13 @@
 	<br />
 
 	<display:table name="${bookView.books}"
-		decorator="com.fvv.std.web.displaytag.wrapper.BookWrapper">
+		decorator="com.fvv.std.web.displaytag.wrapper.BookWrapper" class="table-dt">
 		<display:column property="id" title="ID" />
 		<display:column property="title" title="Title" />
 		<display:column property="publicationDate" title="Publication Date" />
 		<display:column property="unitPrice" title="Unit Price" />
 	</display:table>
 	<br />
-	<a href="../index.jsp">Home</a>
 	<br />
 	<c:import url="footer.jsp" />
 </body>

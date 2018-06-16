@@ -21,15 +21,20 @@ import com.fvv.std.exception.DaoException;
  *
  */
 public class BookDAOImpl implements BookDAO {
+	
+	private Connection connection;
 
+	public BookDAOImpl() {
+		this.connection = ConnectionFactory.getInstance().getConnection();
+	}
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void addBook(final Book book) throws DaoException {
 		try (
-				Connection conn = ConnectionFactory.getInstance().getConnection(); 
-				PreparedStatement ps = conn.prepareStatement(SqlQueryEnum.BOOK_INSERT.getQuery())
+				PreparedStatement ps = this.connection.prepareStatement(SqlQueryEnum.BOOK_INSERT.getQuery())
 		) {					
 			ps.setString(1, book.getTitle());
 			ps.setDouble(2, book.getUnitPrice());
@@ -47,8 +52,7 @@ public class BookDAOImpl implements BookDAO {
 	public List<Book> listBooks() throws DaoException {
 		List<Book> books = new ArrayList<>();
 		try (
-				Connection conn = ConnectionFactory.getInstance().getConnection(); 
-				PreparedStatement ps = conn.prepareStatement(SqlQueryEnum.BOOK_SELECT_ALL.getQuery());
+				PreparedStatement ps = this.connection.prepareStatement(SqlQueryEnum.BOOK_SELECT_ALL.getQuery());
 				ResultSet rs = ps.executeQuery()
 		) {				
 			while(rs.next()) {
