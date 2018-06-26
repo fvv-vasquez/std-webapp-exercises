@@ -25,6 +25,13 @@
 				<li><a href="02-taglib/random-table-taglib.jsp">Random Number Table with Taglib</a></li>
 			</ul>
 		</li>
+		</br>
+		<li>
+			<b>03 - FILTRO</b>
+			<ul>
+				<li><a href="03-filter/loginDB.jsp">Login in a DataBase</a></li>
+			</ul>
+		</li>
 	</ul>
 </body>
 </html>

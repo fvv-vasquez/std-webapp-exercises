@@ -16,6 +16,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>authServletDb</servlet-name>
+		<servlet-class>com.fvv.std.web.servlets.AuthServletDB</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>authServletDb</servlet-name>
+		<url-pattern>/03-filter/authentication</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>randServlet</servlet-name>
 		<servlet-class>com.fvv.std.web.servlets.RandomServlet</servlet-class>
 	</servlet>
