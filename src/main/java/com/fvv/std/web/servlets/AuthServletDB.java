@@ -47,10 +47,6 @@ public class AuthServletDB extends HttpServlet {
 			} else {
 				response.sendRedirect("/std-webapp-exercises/03-filter/invalid-login.jsp");
 			}
-			
-			if(this.userDbController.checkPermission(userDB).equals("admin")) {
-				
-			}
 		} catch (ControllerException e) {
 			e.printStackTrace();
 			request.setAttribute("resultMsg", "Error: " + e.getMessage());

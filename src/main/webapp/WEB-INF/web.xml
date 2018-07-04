@@ -12,7 +12,9 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>authFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/03-filter/page-one.jsp</url-pattern>
+		<url-pattern>/03-filter/page-two.jsp</url-pattern>
+		<url-pattern>/03-filter/page-three.jsp</url-pattern>
 	</filter-mapping>
 
 	<servlet>
