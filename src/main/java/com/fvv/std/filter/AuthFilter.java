@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 public class AuthFilter implements Filter {
 
@@ -20,8 +21,16 @@ public class AuthFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
-		final String loggedUser = request.getParameter("loggedUser");
-		System.out.println(loggedUser);
+		final HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+		
+		final Object loggedUser = httpServletRequest.getSession().getAttribute("loggedUser");
+		
+		if(loggedUser != null) {
+			final String username = loggedUser.toString();
+			System.out.println(username);
+		} else {
+			System.out.println("No authentication found...");
+		}		
 		
 		chain.doFilter(request, response);
 	}

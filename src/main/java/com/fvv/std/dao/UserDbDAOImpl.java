@@ -30,4 +30,21 @@ public class UserDbDAOImpl implements UserDbDAO {
 		return false;
 	}
 
+	@Override
+	public String checkPermission(UserDB userDB) throws DaoException {
+		try (
+				Connection connection = ConnectionFactory.getInstance().getConnection();
+				PreparedStatement ps = connection.prepareStatement(SqlQueryEnum.LOGIN_SELECT_PERMISSION.getQuery())
+		) {
+			ps.setString(1, userDB.getName());
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					userDB.setPermission(rs.getString("user_permission"));
+				}
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Permission not found", e);
+		}
+		return userDB.getPermission();
+	}
 }

@@ -11,12 +11,11 @@ public class BookTest {
 	public static void main(String[] args) throws DaoException, ControllerException {
 		
 		UserDB usDb = new UserDB();
-		usDb.setName("css");
-		usDb.setPassword("pass");
+		usDb.setName("fvv");
 		
 		UserDbController usController = new UserDbControllerImpl();
 		
-		boolean cont = usController.checkLogin(usDb);
-		System.out.println(cont);
+		String teste = usController.checkPermission(usDb);
+		System.out.println(teste);
 	}
 }

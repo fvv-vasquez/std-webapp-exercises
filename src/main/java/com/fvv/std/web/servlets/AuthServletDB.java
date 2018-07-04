@@ -2,7 +2,6 @@ package com.fvv.std.web.servlets;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +32,6 @@ public class AuthServletDB extends HttpServlet {
 	
 	private void validateUser(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rd = null;
 		
 		try {
 			String name = request.getParameter("name");
@@ -44,17 +42,19 @@ public class AuthServletDB extends HttpServlet {
 			userDB.setPassword(password);
 			
 			if (this.userDbController.checkLogin(userDB)) {
-				request.setAttribute("loggedUser", name);
-				rd = request.getRequestDispatcher("/03-filter/home-page.jsp");
+				request.getSession().setAttribute("loggedUser", name);
+				response.sendRedirect("/std-webapp-exercises/03-filter/home-page.jsp");
 			} else {
-				rd = request.getRequestDispatcher("/03-filter/invalid-login.jsp");
+				response.sendRedirect("/std-webapp-exercises/03-filter/invalid-login.jsp");
+			}
+			
+			if(this.userDbController.checkPermission(userDB).equals("admin")) {
+				
 			}
 		} catch (ControllerException e) {
 			e.printStackTrace();
 			request.setAttribute("resultMsg", "Error: " + e.getMessage());
-			rd = request.getRequestDispatcher("/error.jsp");
-		}		
-		request.setAttribute("returnPage", "../index.jsp");
-		rd.forward(request, response);
+			response.sendRedirect("../error.jsp");			
+		}
 	}
 }

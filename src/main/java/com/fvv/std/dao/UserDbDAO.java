@@ -6,5 +6,7 @@ import com.fvv.std.exception.DaoException;
 public interface UserDbDAO {
 	
 	boolean checkLogin(UserDB userDB) throws DaoException;
+	
+	String checkPermission(UserDB userDB) throws DaoException;
 
 }

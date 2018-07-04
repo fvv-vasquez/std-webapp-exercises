@@ -7,4 +7,5 @@ public interface UserDbController {
 	
 	boolean checkLogin(UserDB userDB) throws ControllerException;
 
+	String checkPermission(UserDB userDB) throws ControllerException;
 }

@@ -14,7 +14,9 @@ public enum SqlQueryEnum {
 	
 	BOOK_SELECT_ALL("SELECT * FROM tb_book"),
 	
-	LOGIN_SELECT("SELECT count(*) AS records FROM tb_user WHERE user_name = ? AND user_password = ?");
+	LOGIN_SELECT("SELECT count(*) AS records FROM tb_user WHERE user_name = ? AND user_password = ?"),
+	
+	LOGIN_SELECT_PERMISSION("SELECT user_permission FROM tb_user WHERE user_name = ?");
 	
 	private final String query;
 	
