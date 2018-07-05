@@ -1,6 +1,9 @@
 package com.fvv.std.filter;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -48,7 +51,15 @@ public class AuthFilter implements Filter {
 				String path = ((HttpServletRequest) request).getRequestURI().substring(((HttpServletRequest) request)
 						.getContextPath().length());
 				
-				if (permission.equals("admin") && path.equals("/03-filter/page-one.jsp") 
+				boolean validation = this.validateUriAccessByPermission(permission, path);
+				
+				if (validation == true) {
+					chain.doFilter(request, response);
+				} else {
+					httpServletResponse.sendRedirect("/std-webapp-exercises/03-filter/no-permission.jsp");
+				}
+				
+				/*if (permission.equals("admin") && path.equals("/03-filter/page-one.jsp") 
 						|| (permission.equals("admin") && path.equals("/03-filter/page-two.jsp")) 
 						|| (permission.equals("admin") && path.equals("/03-filter/page-three.jsp"))) {
 					chain.doFilter(request, response);
@@ -56,14 +67,20 @@ public class AuthFilter implements Filter {
 					chain.doFilter(request, response);
 				} else {
 					httpServletResponse.sendRedirect("/std-webapp-exercises/03-filter/no-permission.jsp");
-				}
+				}*/
 				
 			} catch (ControllerException e) {
 				e.printStackTrace();  
 			}
 		} else {
-			System.out.println("No authentication found...");
+			httpServletResponse.sendRedirect("/std-webapp-exercises/03-filter/loginDB.jsp");
 		}		
+	}
+	
+	private boolean validateUriAccessByPermission(final String permission, final String uri) {
+		Map<String, String[]> permissionMap = new HashMap<>();
+		return false;
+		
 	}
 
 	@Override
